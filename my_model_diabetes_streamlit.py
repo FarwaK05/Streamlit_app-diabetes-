@@ -42,14 +42,14 @@ with st.sidebar:
     HighChol = st.selectbox('High Cholesterol (0 = No, 1 = Yes)', [0, 1])
     CholCheck = st.selectbox('Cholesterol Check in Past 5 Years (0 = No, 1 = Yes)', [0, 1])
     BMI = st.slider('Body Mass Index (BMI)', 10.0, 50.0, step=0.1)
-    Smoker = st.selectbox('Have you smoked at least 100 cigarettes in your entire life? (0 = No, 1 = Yes)', [0, 1])
+    Smoker = st.selectbox('Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes] (0 = No, 1 = Yes)', [0, 1])
     Stroke = st.selectbox('Stroke (0 = No, 1 = Yes)', [0, 1])
     HeartDiseaseorAttack = st.selectbox('Heart Disease or Heart Attack (0 = No, 1 = Yes)', [0, 1])
     PhysActivity = st.selectbox('Physical Activity in Past 30 Days (0 = No, 1 = Yes)', [0, 1])
     Fruits = st.selectbox('Consume Fruit 1 or more times per day (0 = No, 1 = Yes)', [0, 1])
     Veggies = st.selectbox('Consume Vegetables 1 or more times per day (0 = No, 1 = Yes)', [0, 1])
     HvyAlcoholConsump = st.selectbox('Heavy Alcohol Consumption (0 = No, 1 = Yes)', [0, 1])
-    GenHlth = st.slider('General Health (1 = Excellent, 5 = Poor)', 1, 5)
+    GenHlth = st.slider('General Health  (1 = Excellent, 2 = Very Good, 3 = Good, 4 = Fair, 5 = Poor)', 1, 5)
     MentHlth = st.slider('Mental Health (Number of days with poor mental health past 30 days)', 0, 30)
     PhysHlth = st.slider('Physical Health (Number of days with poor physical health past 30 days)', 0, 30)
     DiffWalk = st.selectbox('Difficulty Walking (0 = No, 1 = Yes)', [0, 1])
@@ -108,9 +108,9 @@ if st.button('Predict Diabetes'):
         
     st.subheader('Prediction Result')
     if prediction_binary[0][0] == 1:
-        st.markdown('### :red[Diabetes Detected]')
+        st.markdown('### :red[Diabetes Predicted]')
     else:
-        st.markdown('### :green[No Diabetes Detected]')
+        st.markdown('### :green[No Diabetes Predicted]')
 
     # Display probability
     st.write(f"**Prediction Probability**: {prediction[0][0]:.2f}")
